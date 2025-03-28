@@ -34,12 +34,12 @@ local function contains(table, val)
   return false
 end
 local augroup = vim.api.nvim_create_augroup("MySetNumber", { clear = true })
-local ignore_filetypes = { "alpha", "neo-tree", "Trouble" }
+local ignore_filetypes = { "snacks_dashboard", "neo-tree", "Trouble" }
 vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   group = augroup,
   callback = function(_)
     if not contains(ignore_filetypes, vim.bo.filetype) then
-      vim.wo.number = false
+      vim.wo.number = true
       vim.wo.relativenumber = true
     end
   end,
@@ -74,4 +74,3 @@ if vim.g.neovide then
   vim.api.nvim_set_keymap("t", "<C-S-v>", '<C-\\><C-N>"+pi', { noremap = true, silent = true })
   vim.api.nvim_set_keymap("v", "<C-S-v>", "<C-R>+", { noremap = true, silent = true })
 end
-
