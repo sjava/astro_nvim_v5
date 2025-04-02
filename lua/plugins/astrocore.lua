@@ -35,6 +35,7 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        python3_host_prog = "python",
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -47,16 +48,6 @@ return {
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-
-        ["<Leader>j"] = { desc = "vim-test" },
-        ["<Leader>jn"] = { "<cmd>TestNearest<cr>", desc = "test near" },
-        ["<Leader>jf"] = { "<cmd>TestFile<cr>", desc = "test file" },
-        ["<Leader>ja"] = { "<cmd>TestSuite<cr>", desc = "test all" },
-        ["<Leader>jl"] = { "<cmd>TestLast<cr>", desc = "test last" },
-        ["<Leader>jv"] = { "<cmd>TestVisit<cr>", desc = "test visit" },
 
         ["<Leader>ws"] = { "<C-w>s", desc = "horizontal split window" },
         ["<Leader>wv"] = { "<C-w>v", desc = "vertical split window" },
