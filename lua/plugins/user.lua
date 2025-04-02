@@ -27,7 +27,35 @@ return {
   },
   {
     "sjava/vim-test",
-    event = "User AstroFile",
+    cmd = { "TestNearest", "TestFile", "TestLast", "TestClass", "TestSuite", "TestVisit" },
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        ---@param opts AstroCoreOpts
+        opts = function(_, opts)
+          local maps = assert(opts.mappings)
+
+          local prefix = "<Leader>j"
+          maps.n[prefix] = { desc = require("astroui").get_icon("VimTest", 1, true) .. "Vim-Test" }
+
+          maps.n[prefix .. "n"] = { ":TestNearest<CR>", desc = "Test Nearest" }
+          maps.n[prefix .. "f"] = { ":TestFile<CR>", desc = "Test File" }
+          maps.n[prefix .. "l"] = { ":TestLast<CR>", desc = "Test Last" }
+          maps.n[prefix .. "c"] = { ":TestClass<CR>", desc = "Test Class" }
+          maps.n[prefix .. "s"] = { ":TestSuite<CR>", desc = "Test Suite" }
+          maps.n[prefix .. "v"] = { ":TestVisit<CR>", desc = "Test Visit" }
+
+          -- Set the strategy to open results in a vertical split
+          if not opts.options then opts.options = {} end
+          if not opts.options.g then opts.options.g = {} end
+          opts.options.g["test#strategy"] = "shtuff"
+          opts.options.g["shtuff_receiver"] = "devrunner"
+          opts.options.g["test#rust#runner"] = "cargonextest"
+        end,
+      },
+      { "AstroNvim/astroui", opts = { icons = { VimTest = "󰙨" } } },
+    },
+    event = { "VeryLazy" },
   },
   {
     "rmagatti/goto-preview",
@@ -213,6 +241,6 @@ return {
     branch = "x86_64-unknown-linux-gnu-latest",
     opts = {
       hint = "floating-letter",
-    }
+    },
   },
 }
