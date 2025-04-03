@@ -113,6 +113,7 @@ return {
 
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
 
   { import = "astrocommunity.completion.copilot-lua" },
