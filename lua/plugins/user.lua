@@ -73,35 +73,22 @@ return {
   },
   {
     "mistweaverco/kulala.nvim",
-    ft = "http",
-    config = function()
-      require("kulala").setup { default_view = "headers_body" }
-      vim.keymap.set(
-        "n",
-        "<C-k>",
-        ":lua require('kulala').jump_prev()<CR>",
-        { noremap = true, silent = true, buffer = 0 }
-      )
-      vim.keymap.set(
-        "n",
-        "<C-j>",
-        ":lua require('kulala').jump_next()<CR>",
-        { noremap = true, silent = true, buffer = 0 }
-      )
-      vim.keymap.set(
-        "n",
-        "<C-o>",
-        ":lua require('kulala').copy()<CR>",
-        { noremap = true, silent = true, buffer = 0, desc = "Copy the current request as a curl command" }
-      )
-      vim.keymap.set(
-        "n",
-        "<C-i>",
-        ":lua require('kulala').from_curl()<CR>",
-        { noremap = true, silent = true, buffer = 0, desc = "Paste curl from clipboard as http request" }
-      )
-      vim.keymap.set("n", "<CR>", ":lua require('kulala').run()<CR>", { noremap = true, silent = true, buffer = 0 })
-    end,
+    ft = { "http", "rest" },
+    opts = {
+      -- your configuration comes here
+      global_keymaps = true,
+    },
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          local maps = assert(opts.mappings)
+
+          local prefix = "<Leader>R"
+          maps.n[prefix] = { desc = "Kulala" }
+        end,
+      },
+    },
   },
   {
     "otavioschwanck/arrow.nvim",
