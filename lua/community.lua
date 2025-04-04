@@ -58,13 +58,7 @@ return {
   },
 
   { import = "astrocommunity.pack.lua" },
-
   { import = "astrocommunity.pack.rust" },
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^6",
-  },
-
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
