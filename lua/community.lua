@@ -23,6 +23,9 @@ return {
         },
         which_key = true,
         blink_cmp = true,
+        snacks = {
+          enabled = true,
+        },
         mini = {
           enabled = true,
           indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
