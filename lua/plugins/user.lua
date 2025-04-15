@@ -169,12 +169,14 @@ return {
     ft = { "markdown", "codecompanion" },
     opts = {
       preview = {
+        enable = false,
         filetypes = { "markdown", "codecompanion" },
       },
     },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
+      "saghen/blink.cmp",
     },
   },
   {
