@@ -56,7 +56,11 @@ return {
         ["<Leader>wl"] = { "<C-w>l", desc = "right window" },
         ["<Leader>wk"] = { "<C-w>k", desc = "up window" },
         ["<Leader>ww"] = {
-          function() require("nvim_winpick").pick_focus_window() end,
+          function()
+            local picker = require "window-picker"
+            local picked_window_id = picker.pick_window() or vim.api.nvim_get_current_win()
+            vim.api.nvim_set_current_win(picked_window_id)
+          end,
           desc = "Pick a window",
         },
         ["<Leader>wc"] = {

@@ -226,10 +226,14 @@ return {
     opts = {},
   },
   {
-    "MarcusGrass/nvim_winpick",
-    branch = "x86_64-unknown-linux-gnu-latest",
-    opts = {
-      hint = "floating-letter",
-    },
+    "s1n7ax/nvim-window-picker",
+    name = "window-picker",
+    event = "VeryLazy",
+    version = "2.*",
+    config = function()
+      require("window-picker").setup {
+        hint = "floating-big-letter",
+      }
+    end,
   },
 }
