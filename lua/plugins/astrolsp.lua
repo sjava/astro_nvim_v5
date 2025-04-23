@@ -95,9 +95,67 @@ return {
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
     -- takes two parameters `client` and `bufnr`  (`:h lspconfig-setup`)
-    on_attach = function(_client, _bufnr)
+    on_attach = function(client, bufnr)
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
+      if client.name == "rust-analyzer" then
+        vim.keymap.set(
+          "n",
+          "<Leader>lc",
+          function() vim.cmd.RustLsp "openCargo" end,
+          { buffer = true, desc = "Open Cargo.toml" }
+        )
+        vim.keymap.set(
+          "n",
+          "<Leader>le",
+          function() vim.cmd.RustLsp "expandMacro" end,
+          { silent = true, buffer = bufnr, desc = "Expand macro" }
+        )
+        vim.keymap.set(
+          "n",
+          "<Leader>lE",
+          function() vim.cmd.RustLsp "explainError" end,
+          { silent = true, buffer = bufnr, desc = "Explain Error" }
+        )
+        vim.keymap.set(
+          "n",
+          "<Leader>lo",
+          function() vim.cmd.RustLsp "externalDocs" end,
+          { buffer = true, desc = "Open Documentation" }
+        )
+        vim.keymap.set(
+          "n",
+          "<Leader>lp",
+          function() vim.cmd.RustLsp "parentModule" end,
+          { silent = true, buffer = bufnr, desc = "Parent Module" }
+        )
+        vim.keymap.set(
+          "n",
+          "<Leader>lP",
+          function() vim.cmd.RustLsp "rebuildProcMacros" end,
+          { silent = true, buffer = bufnr, desc = "Rebuild ProcMacros" }
+        )
+        vim.keymap.set(
+          "n",
+          "<Leader>lt",
+          function() vim.cmd.RustLsp "testables" end,
+          { silent = true, buffer = bufnr, desc = "select testables" }
+        )
+        vim.keymap.set(
+          "n",
+          "<Leader>lR",
+          function() vim.cmd.RustLsp "runnables" end,
+          { silent = true, buffer = bufnr, desc = "select runnables" }
+        )
+
+        require("ferris").create_commands(bufnr)
+        vim.keymap.set(
+          "n",
+          "<Leader>lm",
+          "<cmd>FerrisViewMemoryLayout<cr>",
+          { buffer = true, desc = "View Memory Layout" }
+        )
+      end
     end,
   },
 }
