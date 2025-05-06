@@ -159,11 +159,6 @@ return {
     version = "*",
   },
   {
-    "jakewvincent/mkdnflow.nvim",
-    ft = "markdown",
-    config = function() require("mkdnflow").setup {} end,
-  },
-  {
     "OXY2DEV/markview.nvim",
     lazy = false, -- Recommended
     ft = { "markdown", "codecompanion" },
