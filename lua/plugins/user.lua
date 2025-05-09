@@ -236,4 +236,11 @@ return {
     event = "LspAttach",
     opts = {}, -- required, even if empty
   },
+  {
+    "pmouraguedes/sql-ghosty.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {},
+  },
 }
