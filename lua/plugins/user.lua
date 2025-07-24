@@ -163,6 +163,9 @@ return {
     lazy = false, -- Recommended
     ft = { "markdown", "codecompanion" },
     opts = {
+      experimental = {
+        check_rtp = false, -- Disable the check for the runtime path
+      },
       preview = {
         enable = false,
         filetypes = { "markdown", "codecompanion" },
