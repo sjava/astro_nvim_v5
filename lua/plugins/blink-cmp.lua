@@ -19,12 +19,16 @@ return {
                 ---@module "blink-ripgrep"
                 ---@type blink-ripgrep.Options
                 opts = {
+                  backend = {
+                    ripgrep = {
+                      additional_rg_options = {},
+                      max_filesize = "1M",
+                      search_casing = "--ignore-case",
+                    },
+                    context_size = 5,
+                  },
                   prefix_min_len = 3,
-                  context_size = 5,
-                  max_filesize = "1M",
                   project_root_marker = ".git",
-                  search_casing = "--ignore-case",
-                  additional_rg_options = {},
                   fallback_to_regex_highlighting = true,
                   debug = false,
                 },
