@@ -63,7 +63,6 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
