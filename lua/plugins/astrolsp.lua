@@ -124,7 +124,7 @@ return {
         vim.keymap.set(
           "n",
           "<Leader>lo",
-          function() vim.cmd.RustLsp "externalDocs" end,
+          function() vim.cmd.RustLsp "openDocs" end,
           { buffer = true, desc = "Open Documentation" }
         )
         vim.keymap.set(
