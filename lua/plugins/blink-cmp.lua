@@ -2,6 +2,13 @@ return {
   "Saghen/blink.cmp",
   opts = {
     signature = { enabled = true },
+    sources = {
+      providers = {
+        path = {
+          enabled = function() return vim.bo.filetype ~= "copilot-chat" end,
+        },
+      },
+    },
   },
   specs = {
     "mikavilpas/blink-ripgrep.nvim",
