@@ -106,16 +106,14 @@ return {
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
 
-  { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua" },
   {
     "zbirenbaum/copilot.lua",
     opts = {
       suggestion = {
-        keymap = {
-          accept = "<C-l>",
-          accept_word = "<C-w>",
-          accept_line = "<C-j>",
-        },
+        auto_trigger = true,
+        hide_during_completion = false,
       },
     },
   },
