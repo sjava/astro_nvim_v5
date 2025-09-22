@@ -97,7 +97,7 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     opts = {
-      model = "claude-4-sonnet",
+      mode = "claude-sonnet-4",
     },
   },
 
@@ -107,17 +107,6 @@ return {
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
 
   { import = "astrocommunity.completion.copilot-lua-cmp" },
-  -- { import = "astrocommunity.completion.copilot-lua" },
-  {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      suggestion = {
-        auto_trigger = true,
-        hide_during_completion = false,
-      },
-    },
-  },
-
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
 }
