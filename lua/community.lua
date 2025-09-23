@@ -106,7 +106,9 @@ return {
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
 
+  { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
+
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
 }
