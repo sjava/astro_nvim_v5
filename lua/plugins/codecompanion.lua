@@ -8,18 +8,29 @@ return {
     require("codecompanion").setup {
       adapters = {
         http = {
-          deepseek = function()
-            return require("codecompanion.adapters").extend("deepseek", {
+          qwen3 = function()
+            return require("codecompanion.adapters").extend("openai", {
+              name = "qwen3",
+              url = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
               env = {
-                api_key = "DEEPSEEK_API_KEY",
+                api_key = os.getenv "QWEN_API_KEY", -- 你设置在环境变量里的 key
+              },
+              schema = {
+                model = {
+                  default = "qwen3-max", -- 具体模型名称
+                },
               },
             })
           end,
         },
       },
       strategies = {
-        chat = { adapter = "deepseek" },
-        inline = { adapter = "deepseek" },
+        chat = {
+          adapter = "qwen3",
+        },
+        inline = {
+          adapter = "qwen3",
+        },
       },
     }
   end,
