@@ -93,6 +93,8 @@ return {
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.text-case-nvim" },
 
+  { import = "astrocommunity.editing-support.codecompanion-nvim" },
+
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   {
     "CopilotC-Nvim/CopilotChat.nvim",

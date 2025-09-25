@@ -31,6 +31,9 @@ return {
         inline = {
           adapter = "qwen3",
         },
+        cmd = {
+          adapter = "qwen3",
+        },
       },
     }
   end,

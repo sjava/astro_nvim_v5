@@ -159,6 +159,16 @@ return {
     version = "*",
   },
   {
+    "echasnovski/mini.diff",
+    config = function()
+      local diff = require "mini.diff"
+      diff.setup {
+        -- Disabled by default
+        source = diff.gen_source.none(),
+      }
+    end,
+  },
+  {
     "OXY2DEV/markview.nvim",
     lazy = false, -- Recommended
     ft = { "markdown", "codecompanion" },
@@ -168,7 +178,7 @@ return {
       },
       preview = {
         enable = false,
-        filetypes = { "markdown", "codecompanion" },
+        filetypes = { "markdown" },
       },
     },
     dependencies = {
