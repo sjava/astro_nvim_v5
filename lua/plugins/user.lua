@@ -177,8 +177,8 @@ return {
         check_rtp = false, -- Disable the check for the runtime path
       },
       preview = {
-        enable = false,
-        filetypes = { "markdown" },
+        enable = true,
+        filetypes = { "markdown", "codecompanion" },
       },
     },
     dependencies = {
