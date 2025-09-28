@@ -4,6 +4,14 @@ return {
     signature = { enabled = true },
     sources = {
       providers = {
+        buffer = {
+          opts = {
+            -- filter to only "normal" buffers
+            get_bufnrs = function()
+              return vim.tbl_filter(function(bufnr) return vim.bo[bufnr].buftype == "" end, vim.api.nvim_list_bufs())
+            end,
+          },
+        },
         path = {
           enabled = function() return vim.bo.filetype ~= "copilot-chat" end,
         },
