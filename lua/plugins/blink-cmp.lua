@@ -39,16 +39,8 @@ return {
                 ---@type blink-ripgrep.Options
                 opts = {
                   backend = {
-                    ripgrep = {
-                      additional_rg_options = {},
-                      max_filesize = "1M",
-                      search_casing = "--ignore-case",
-                    },
-                    context_size = 5,
+                    use = "gitgrep-or-ripgrep",
                   },
-                  prefix_min_len = 3,
-                  project_root_marker = ".git",
-                  fallback_to_regex_highlighting = true,
                   debug = false,
                 },
                 transform_items = function(_, items)
