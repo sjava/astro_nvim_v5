@@ -1,7 +1,18 @@
+local function copilot_action(action)
+  local copilot = require "copilot.suggestion"
+  return function()
+    if copilot.is_visible() then
+      copilot[action]()
+      return true -- doesn't run the next command
+    end
+  end
+end
+
 return {
   "Saghen/blink.cmp",
   opts = {
     signature = { enabled = true },
+    keymap = { ["<C-e>"] = { copilot_action "dismiss", "hide", "fallback" } },
     sources = {
       providers = {
         buffer = {
@@ -19,7 +30,7 @@ return {
     },
     cmdline = {
       keymap = { preset = "inherit" },
-      completion = { menu = { auto_show = true } },
+      completion = { menu = { auto_show = false } },
     },
   },
   specs = {
