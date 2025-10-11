@@ -170,7 +170,7 @@ return {
   },
   {
     "OXY2DEV/markview.nvim",
-    lazy = false, -- Recommended
+    lazy = false,
     ft = { "markdown", "codecompanion" },
     opts = {
       experimental = {
@@ -178,7 +178,7 @@ return {
       },
       preview = {
         enable = true,
-        filetypes = { "markdown", "codecompanion" },
+        filetypes = { "codecompanion" },
       },
     },
     dependencies = {
