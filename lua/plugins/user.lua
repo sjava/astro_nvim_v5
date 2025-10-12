@@ -178,7 +178,7 @@ return {
       },
       preview = {
         enable = true,
-        filetypes = { "codecompanion" },
+        filetypes = { "markdown", "codecompanion" },
       },
     },
     dependencies = {
