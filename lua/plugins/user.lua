@@ -171,14 +171,10 @@ return {
   {
     "OXY2DEV/markview.nvim",
     lazy = false,
-    ft = { "markdown", "codecompanion" },
     opts = {
-      experimental = {
-        check_rtp = false, -- Disable the check for the runtime path
-      },
       preview = {
-        enable = true,
         filetypes = { "markdown", "codecompanion" },
+        ignore_buftypes = {},
       },
     },
     dependencies = {
