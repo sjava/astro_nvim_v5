@@ -28,6 +28,11 @@ return {
         chat = {
           adapter = "qwen3",
           slash_commands = {
+            ["symbols"] = {
+              opts = {
+                provider = "snacks",
+              },
+            },
             ["buffer"] = {
               opts = {
                 provider = "snacks",
