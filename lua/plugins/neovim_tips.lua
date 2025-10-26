@@ -6,6 +6,7 @@ return {
     },
     opts = {
       user_file = vim.fn.stdpath "config" .. "/neovim_tips/user_tips.md",
+      daily_tip = 0,
     },
   },
 }
