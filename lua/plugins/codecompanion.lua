@@ -22,6 +22,20 @@ return {
               },
             })
           end,
+          minimax = function()
+            return require("codecompanion.adapters").extend("openai", {
+              name = "minimax",
+              url = "https://api.minimax.chat/v1/chat/completions",
+              env = {
+                api_key = os.getenv "MINIMAX_API_KEY",
+              },
+              schema = {
+                model = {
+                  default = "MiniMax-M2",
+                },
+              },
+            })
+          end,
         },
       },
       strategies = {
