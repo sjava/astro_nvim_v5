@@ -95,13 +95,13 @@ return {
 
   { import = "astrocommunity.editing-support.codecompanion-nvim" },
 
-  { import = "astrocommunity.editing-support.copilotchat-nvim" },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    opts = {
-      mode = "claude-sonnet-4",
-    },
-  },
+  -- { import = "astrocommunity.editing-support.copilotchat-nvim" },
+  -- {
+  --   "CopilotC-Nvim/CopilotChat.nvim",
+  --   opts = {
+  --     mode = "claude-sonnet-4",
+  --   },
+  -- },
 
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
