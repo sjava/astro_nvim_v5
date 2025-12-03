@@ -9,9 +9,6 @@ return {
     opts = {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
-        -- install language servers
-        "lua-language-server",
-
         -- install formatters
         "stylua",
 

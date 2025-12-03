@@ -159,12 +159,10 @@ return {
     version = "*",
   },
   {
-    "echasnovski/mini.diff",
+    "echasnovski/mini.bracketed",
     config = function()
-      local diff = require "mini.diff"
-      diff.setup {
-        -- Disabled by default
-        source = diff.gen_source.none(),
+      require("mini.bracketed").setup {
+        comment = { suffix = "" },
       }
     end,
   },
