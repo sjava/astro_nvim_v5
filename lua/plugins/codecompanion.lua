@@ -65,7 +65,7 @@ return {
             },
           },
           keymaps = (function()
-            local keymaps = vim.deepcopy(require("codecompanion.config").config.strategies.chat.keymaps)
+            local keymaps = vim.deepcopy(require("codecompanion.config").config.interactions.chat.keymaps)
             for _, keymap in pairs(keymaps) do
               if type(keymap.modes) == "string" then keymap.modes = { keymap.modes } end
               local new_modes = {}
