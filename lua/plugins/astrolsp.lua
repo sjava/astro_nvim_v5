@@ -47,9 +47,9 @@ return {
         -- (Optional) any default configuration changes that may need to happen (can be a table or a function that returns a table)
         cmd = { vim.fn.stdpath "data" .. "/mason/bin/elixir-ls" },
       },
-      lua_ls = {
-        cmd = { "/usr/bin/lua-language-server" },
-      },
+      -- lua_ls = {
+      --   cmd = { "/usr/bin/lua-language-server" },
+      -- },
     },
     -- customize how language servers are attached
     handlers = {
