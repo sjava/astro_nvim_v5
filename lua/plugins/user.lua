@@ -260,4 +260,9 @@ return {
       vim.diagnostic.config { virtual_text = false } -- Disable Neovim's default virtual text diagnostics
     end,
   },
+  {
+    "esmuellert/codediff.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    cmd = "CodeDiff",
+  },
 }
