@@ -38,7 +38,7 @@ return {
           end,
         },
       },
-      strategies = {
+      interactions = {
         chat = {
           adapter = "qwen3",
           slash_commands = {
