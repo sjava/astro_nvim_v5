@@ -95,14 +95,6 @@ return {
 
   { import = "astrocommunity.editing-support.codecompanion-nvim" },
 
-  -- { import = "astrocommunity.editing-support.copilotchat-nvim" },
-  -- {
-  --   "CopilotC-Nvim/CopilotChat.nvim",
-  --   opts = {
-  --     mode = "claude-sonnet-4",
-  --   },
-  -- },
-
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
@@ -114,4 +106,7 @@ return {
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
   { import = "astrocommunity.fuzzy-finder.snacks-picker" },
+
+  { import = "astrocommunity.ai.opencode-nvim" },
+  { import = "astrocommunity.ai.sidekick-nvim" },
 }
