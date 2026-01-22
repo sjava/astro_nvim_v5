@@ -9,29 +9,17 @@ return {
       adapters = {
         http = {
           qwen3 = function()
-            return require("codecompanion.adapters").extend("openai", {
+            return require("codecompanion.adapters").extend("openai_compatible", {
               name = "qwen3",
-              url = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
               env = {
                 api_key = os.getenv "QWEN_API_KEY",
+                url = "https://dashscope.aliyuncs.com/compatible-mode",
+                chat_url = "/v1/chat/completions",
+                models_endpoint = "/v1/models",
               },
               schema = {
                 model = {
                   default = "qwen3-max",
-                },
-              },
-            })
-          end,
-          minimax = function()
-            return require("codecompanion.adapters").extend("openai", {
-              name = "minimax",
-              url = "https://api.minimax.chat/v1/chat/completions",
-              env = {
-                api_key = os.getenv "MINIMAX_API_KEY",
-              },
-              schema = {
-                model = {
-                  default = "MiniMax-M2",
                 },
               },
             })
