@@ -24,6 +24,52 @@ return {
               },
             })
           end,
+          qiniu = function()
+            -- 1. 首先解析并获取内置的 openai_compatible 适配器基础对象
+            local openai_compatible = require("codecompanion.adapters").resolve "openai_compatible"
+
+            -- 2. 使用 extend 方法进行扩展
+            return require("codecompanion.adapters").extend("openai_compatible", {
+              name = "qiniu",
+              env = {
+                api_key = os.getenv "QINIU_API_KEY",
+                url = "https://api.qnaigc.com",
+              },
+              schema = {
+                model = {
+                  -- 设置默认启动模型
+                  default = "gemini-3.0-pro-preview",
+                  -- 3. 重写选择逻辑以合并手动模型
+                  choices = function(self)
+                    -- 执行原有的动态获取逻辑（即从 /v1/models 获取）
+                    local models = openai_compatible.schema.model.choices(self)
+
+                    -- 4. 手动追加你想要的特定模型
+                    local manual_models = {
+                      "gemini-3.0-pro-preview",
+                      "claude-3-5-sonnet-latest", -- 你也可以顺便多加几个
+                    }
+
+                    -- 将手动模型插入列表（检查是否已存在以避免重复）
+                    for _, m in ipairs(manual_models) do
+                      local exists = false
+                      for _, existing_m in ipairs(models) do
+                        if existing_m == m then
+                          exists = true
+                          break
+                        end
+                      end
+                      if not exists then
+                        table.insert(models, 1, m) -- 插入到列表最前方，方便选择
+                      end
+                    end
+
+                    return models
+                  end,
+                },
+              },
+            })
+          end,
         },
       },
       interactions = {
