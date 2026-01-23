@@ -37,6 +37,9 @@ return {
         -- This can be found in the `lua/lazy_setup.lua` file
         python3_host_prog = "python",
         node_host_prog = "node",
+        opencode_opts = { provider = {
+          enabled = "kitty",
+        } },
       },
     },
     -- Mappings can be configured through AstroCore as well.
