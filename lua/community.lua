@@ -71,7 +71,7 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.elixir-phoenix" },
-  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python.base" },
   { import = "astrocommunity.pack.python.basedpyright" },
   { import = "astrocommunity.pack.python.ruff" },
   { import = "astrocommunity.pack.html-css" },
