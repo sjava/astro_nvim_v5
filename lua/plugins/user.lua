@@ -265,4 +265,8 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     cmd = "CodeDiff",
   },
+  {
+    "urtzienriquez/learnlua.nvim",
+    cmd = "Learn",
+  },
 }
