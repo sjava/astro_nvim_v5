@@ -269,4 +269,9 @@ return {
     "urtzienriquez/learnlua.nvim",
     cmd = "Learn",
   },
+  {
+    "yousefhadder/markdown-plus.nvim",
+    ft = "markdown",
+    opts = {},
+  },
 }
